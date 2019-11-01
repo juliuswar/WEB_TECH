@@ -1,0 +1,145 @@
+body {
+    background: #D3D3D3;
+    margin: 0;
+    width: 100%;
+}
+
+.heading-primary--main:hover {
+    background: #D3D3D3;
+}
+
+.heading-primary--sub:hover {
+    background: #D3D3D3;
+}
+
+@keyframes moveInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80% {
+        transform: translateX(1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80% {
+        transform: translateX(-1rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, rgba(111, 210, 213, 0.8), rgba(40, 105, 180, 0.979)), url(image/imgheader.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+}
+
+.header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.heading-primary--main {
+    display: block;
+    font-size: 40px;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out;
+    /*
+        animation-delay: 3s;
+        animation-iteration-count: 3;
+        */
+}
+
+.heading-primary--sub {
+    display: block;
+    font-size: 50px;
+    animation: moveInRight 1s ease-out;
+}
+
+.btn {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-top: 30%;
+    display: inline-block;
+    border-radius: 10rem;
+    transition: all .2s;
+    position: relative;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+    background: white;
+}
+
+.about {
+    width: 100%;
+    height: auto;
+    background-image: linear-gradient(to right bottom, rgba(111, 210, 213, 0.8), rgba(40, 105, 180, 0.979)), url(image/imgheader.jpg);
+    clip-path: polygon(0 13%, 100% 0, 100% 90%, 0% 100%);
+    padding-bottom: 10%;
+    padding-top: 3%;
+}
+
+#container-isi {
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+}
+
+.portfolio {
+    margin-top: 2%;
+    color: white;
+    background-image: linear-gradient(to right bottom, rgba(111, 210, 213, 0.8), rgba(40, 105, 180, 0.979)), url(image/imgheader.jpg);
+    clip-path: polygon(0 13%, 100% 0, 100% 80%, 0% 100%);
+    padding-top: 5%;
+    padding-bottom: 10%;
+    padding-left: 10%;
+    padding-right: 10%;
+    line-height: 1.5;
+    border: 1px solid black;
+}
+
+.image1 {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 40%;
+}
+
+.kemampuan {
+    padding-top: 6%;
+    padding-bottom: 3%;
+    background: rgb(214, 209, 209);
+}
+
+.footer-copyright:hover {
+    background: #D3D3D3;
+}
+
+.editor2:hover {
+    background: #D3D3D3;
+}

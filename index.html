@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" id="home">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+    <title>Cara Dual Boot Ubuntu 16.04 LTS dan Windows 10 (Full Tutorial) </title>
+</head>
+
+<body>
+
+    <!--Main Navigation-->
+    <nav class="navbar navbar-light navbar-fixed-top bg-light" style="padding-left: 6%;">
+        <a class="navbar-brand nav-link" href="#home">HOBLOG</a>
+        <a class="navbar-brand nav-link" href="cv.html">MY CV</a>
+        <button class="btn btn-navbar" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              
+              <span class="navbar-toggler-icon"></span>
+            </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav ">
+                <li class="nav-item ">
+                    <a class="nav-link " href="#persiapan">Persiapan</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="#boot">Bootable USB Flasdisk</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link " href="#partisi">Membuat Partisi Ubuntu</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <br>
+
+
+
+    <!--Main Navigation-->
+
+    <div class="container ">
+        <div class="row ">
+            <h2 style="padding-left:1%; padding-top: 2%; padding-bottom: 2% ">
+                Cara Dual Boot Ubuntu 16.04 LTS dan Windows 10 (Full Tutorial)
+            </h2><br>
+            <div class="col-sm-9 " style="background-color:white; ">
+
+                <div class="view overlay ">
+                    <img src="image/awal.jpg " width="85% "><br>
+                    <br>
+                    <p style="font-size: 13px " class="container-p1 ">
+                        Ubuntu 16.06 LTS terbaru telah dirilis, dan bagi kamu yang ingin menginstallnya secara dual boot dengan Windows 10, kamu membaca artikel yang tepat.
+                    </p>
+                    <br>
+                    <p>
+                        Di tutorial ini saya akan mengajak kamu untuk menginstall <b>dual boot Ubuntu 16.04 LTS dan Windows 10.</b>Oh ya, meskipun di tutorial ini dituliskan dual boot Ubuntu 16.04 LTS dengan Windows 10, tetapi sebenarnya kamu bisa menggunakan
+                        cara yang sama untuk Windows 7 ataupun Windows 8.x. Siap..?? <b>Let’s do it.</b>
+                        <br><br> <br><br>
+                        <h3 id="persiapan">
+                            Persiapan
+                        </h3>
+                        Pertama kamu perlu mempersiapkan dulu berbagai hal yang diperlukan:<br><br> Laptop / PC Windows 10. <br>File ISO Ubuntu 16.04 LTS (<a href="https://ubuntu.com/ ">download disini</a>) <br> Rufus (<a href="https://rufus.ie/ ">download disini</a>)
+                        <br>EasyBCD Free Edition (<a href="https://neosmart.net/EasyBCD/#comparison ">download disini</a>) <br> USB Flashdisk untuk membuat bootable Ubuntu installer (kamu juga bisa menggunakan DVD Disc) <br> <br><br>Jika semua sudah siap,
+                        kini saatnya kamu memahami konsep dual boot yang akan kita gunakan di tutorial ini.
+
+                </div>
+                <br><br> <br>
+                <h3>
+                    Pahami Konsep Dual Boot Ini
+                </h3>
+                Ada beberapa metode dalam menginstall dual boot Windows dan Ubuntu, bahkan Ubuntu sendiri sudah menyediakan opsi dual boot di media instalasinya. Tetapi Saya lebih suka menginstall keduanya secara terpisah dan tak berhubungan.
+
+                <br><br> Artinya, boot manager Ubuntu kita pisahkan dari boot manager Windows. Tujuannya adalah ketika kita melakukan install ulang Windows, maka boot manager Ubuntu tidak ikut hilang tereplace dengan boot manager Windows yang baru.
+                <br><br> Dengan memisahkan keduanya, kita tidak perlu khawatir ada masalah di Ubuntu jika Windowsnya bermasalah, dan begitu juga sebaliknya. Oleh karena itu kita memerlukan tambahan minimal 3 partisi baru untuk melakukan dual-boot ini.
+                <br><br> Partisi Boot: Kita tidak meletakkan GRUB di MBR bersamaan dengan Windows boot manager. Oleh karena itu di partisi inilah kita akan meletakkan GRUB.
+                <br> Partisi Root: Di partisi inilah Ubuntu akan terinstall.
+                <br> partisi Swap: Partisi ini dibutuhkan untuk swap file dan akan digunakan jika Ubuntu membutuhkan tambahan memory (Swap File ini semacam Page File jika di Windows).
+                <br> Partisi Home (opsional): Partisi ini bersifat opsional, kamu bisa menambahkannya atau menjadikannya satu dengan Root. Home adalah lokasi tempat file kamu tersimpan (music, pictures, documents, dsb).
+                <br> Jika sudah paham, maka kita langsung saja masuk ke dalam proses.
+
+                <br><br><br>
+                </p>
+                <h3 id="boot">
+                    Membuat Bootable USB Flashdisk Ubuntu
+                </h3>
+                <img src="image/awal2.jpg " width="85% "> <br><br>
+                <p>
+                    Bagi kamu yang memilih menggunakan DVD disc, cukup burn saja file ISO Ubuntu 16.04 ke DVD disc menggunakan metode burn image to disc.
+                    <br><br> Tetapi bagi kamu yang memilih menggunakan USB Flashdisk, kamu perlu membuat dulu bootable USB flashdisk Ubuntu. Caranya bisa kamu baca di tutorial ini.
+                    <h3>
+                        Booting ke Bootable Installer Ubuntu
+                    </h3>
+                    <img src="image/awal3.jpg " width="85% ">
+                    <br><br> Setelah bootable USB flashdisk Ubuntu kamu jadi, kini tinggal tancapkan saja di laptop / PC Windows 10, lalu boot dari USB tersebut.
+                    <br><br> Kamu bisa mengatur first boot melalui setting BIOS ataupun dengan masuk ke boot option dengan tombol tertentu di laptop / PC kamu saat booting.
+                    <br><br><br> Ada yang bisa masuk dengan menekan <b>F12, ESC</b>, dsb.
+                </p>
+                <h3 id="partisi">
+                    Membuat Partisi Ubuntu
+                </h3>
+
+                <img src="image/awal4.jpg " width="85% "><br><br>
+                <p> Begitu masuk booting dari installer Ubuntu, kamu akan disuguhi dengan<i> Try Ubuntu </i>dan <i> Install Ubuntu</i>.
+
+                </p><br>
+                <img src="image/awal5.jpg " width="85% ">
+                <br><br>
+                <p>
+                    Jika kamu belum menyiapkan beberapa partisi diatas, maka kamu bisa memilih <i><b>Try Ubuntu</i></b> dan menjalankan <i><b>Gparted</i></b> didalamnya.
+
+                </p>
+                <img src="image/awal6.jpg " width="85% "><br><br>
+                <p>
+                    Setelah Gparted terbuka, silahkan buat partisi yang diperlukan. Kecuali partisi Swap, partisi lainnya harus kamu buat dengan file system <i><b> ext4</i></b>.
+                    <br>
+                    <br>Ingat, karena kita akan membuat cukup banyak partisi, ada baiknya kamu pecah dulu <i>Primary Partition</i> dengan membuat satu <i><b> Extended Partition</i></b>.
+                </p><br>
+                <img src="image/awal7.jpg " width="85% "><br><br>
+                <p>
+                    Extended Partition inilah nanti yang akan kita pecah-pecah sebagai Logical Partition menjadi 4 partisi dibawah ini.
+
+                </p><br><br>
+                <p>
+                    Partisi Boot: Partisi ini sebenarnya 500mb saja sudah cukup, tetapi Saya menggunakan 1GB space untuk memberikan ruang yang cukup jika ada update GRUB kedepannya.
+                </p><br>
+                <img src="image/awal8.jpg " width="85% "><br><br>
+                <br>
+                <img src="image/awal9.jpg " width="85% "><br><br>
+                <p>
+                    <b> Partisi Root</b>: Besar partisi ini bisa kamu sesuaikan dengan kebutuhan, hanya saja pastikan besar partisi tidak kurang dari 10GB. Saya menggunakan 20GB space untuk menginstall Ubuntu.
+                </p>
+                <img src="image/awal10.jpg " width="85% "><br><br>
+                <p>
+                    <b>Partisi Home</b>: Besar partisi ini bisa kamu sesuaikan dengan kebutuhan. Saya tidak menggunakan partisi Home karena file dokumen Saya jadikan satu di partisi Root.
+                    <br><br> Jika partisi sudah diatur, klik Apply dan tunggu proses partisi selesai.</p><br>
+                <img src="image/awal11.jpg " width="85% "><br><br>
+                <p>
+                    Setelah semua partisi selesai dibuat, maka selanjutnya klik saja <i><b>Install Ubuntu 16.04 LTS </b></i>yang ada di dekstop.</p>
+                <br><br> <img src="image/awal12.jpg " width="85% "><br><br>
+                <p>
+                    Pilih Bahasa
+                </p>
+                <br>
+
+                <img src="image/awal13.jpg " width="85% "><br><br>
+                <p>
+                    Centang keduanya untuk melakukan update ketika proses instalasi dan menginstall third party tool yang dibutuhkan dalam menjalankan multimedia dsb.
+
+                </p>
+                <br><br> <img src="image/awal14.jpg " width="85% "><br><br>
+                <p>
+                    Pada bagian Installation type, pilih saja <b><i>Something Else</b></i> untuk memilih partisi yang sudah kita buat tadi.
+                </p>
+                <br>
+
+                <img src="image/awal15.jpg " width="85% "><br><br>
+                <p>
+                    Di masing-masing partisi yang sudah kita buat, pilih <b><i>Change</b></i>. Setelah itu mount point partisi <i><b>boot</b></i> ke <i><b>/boot</b></i> dan centang format the partition.
+                </p>
+                <br><br> <img src="image/awal16.jpg " width="85% "><br><br>
+                <p>
+                    Untuk partisi <b><i>Swap</i></b> pilih<b><i> Use as Swap area</i></b></p>
+                <br>
+
+
+                <img src="image/awal17.jpg " width="85% "><br><br>
+                <p>
+                    Dan untuk partisi <b><i>Root</i></b> silahkan di mount point ke <b><i>/</i></b></p>
+                <br><br> <img src="image/awal18.jpg " width="85% "><br><br>
+                <p>
+                    Ubah Device for boot loader installation ke partisi boot, dalam contoh Saya ini <b><i>partisi boot</i></b>adalah<b><i> /dev/sda5</i></b></p>
+                <br>
+
+                <img src="image/awal19.jpg " width="85% "><br><br>
+                <p>
+                    Setelah itu klik <b><i>Install Now</i></b> <br><br>Lakukan proses instalasi seperti biasa dan restart jika proses instalasi sudah selesai.
+
+                    <br><br> <img src="image/awal20.jpg " width="85% "><br><br> <img src="image/awal21.jpg " width="85% "><br><br> <img src="image/awal22.jpg " width="85% "><br><br> <img src="image/awal23.jpg " width="85% "><br><br>
+                    <p>
+                        Setelah restart, kamu masih belum bisa masuk ke Ubuntu 16.04 LTS karena belum ada opsi boot loader Ubuntu di MBR. Oleh karena itu langsung saja masuk ke Windows 10 terlebih dahulu, lalu buka EasyBCD yang sudah kamu download sebelumnya. <br><br>Setelah
+                        itu buka EasyBCD dan buat entry baru untuk menambahkan opsi Ubuntu 16.04 LTS. Caranya klik saja Add New Entry > Linux/BSD > Pilih GRUB (Legacy) di bagian Type -> Isikan Ubuntu 16.04 LTS di bagian Name -> dan pada bagian drive,
+                        pilih partisi Boot tempat boot loader Ubuntu telah terinstall. Jika sudah, klik Add Entry.</p>
+                    <br>
+                    <img src="image/awal24.jpg " width="85% "><br><br>
+                    <p>
+                        Di menu entries, pastikan hasilnya seperti ini</p>
+                    <br>
+
+                    <img src="image/awal25.jpg " width="85% "><br><br>
+                    <p>
+                        Setelah itu restart PC, dan kamu akan disuguhi opsi booting ke Windows 10 atau Ubuntu 16.04 LTS seperti ini.</p>
+                    <br>
+                    <img src="image/awal26.jpg " width="85% "><br><br>
+                    <p>
+                        Pilih Ubuntu 16.04 LTS untuk masuk ke Ubuntu. Dan inilah hasilnya.</p>
+                    <br>
+                    <img src="image/awal27.jpg " width="85% "><br><br>
+                    <p>
+                        <b>That’s it.</p></b>
+
+                        <br>
+                        <img src="image/awal28.jpg " width="85% "><br><br>
+                        <p><br> Langkah ini terlihat lebih panjang, tetapi percayalah dengan cara ini bakal meminimalisir permasalahan kedepannya.
+                            <br><br> Contohnya jika ada update mayor Windows 10, atau update mayor Ubuntu 16.04 LTS, maka permasalahan seperti bootloader yang kereplace bisa diminimalisir. Apalagi kan update mayor Windows 10 Redstone (Anniversary Update)
+                            segera dirilis dalam waktu dekat.
+                            <br><br><br>Kalaupun sampai ada masalah di bootloader karena suatu hal, maka memperbaikinya sangat mudah karena tinggal memasukkan lagi entry boot melalui EasyBCD di Windows.
+                            <br><br> Itulah kelebihannya jika bootloader Windows dan Ubuntu dipisahkan dalam partisi yang berbeda.
+                        </p>
+                        <img src="image/awal29.jpg " width="85% "><br><br>
+                        <p>
+                            Pilih Ubuntu 16.04 LTS untuk masuk ke Ubuntu. Dan inilah hasilnya.</p>
+                        <br><br>
+
+                        <div class="page-header ">
+                            <h3 class="reviews ">Leave your comment</h3><br>
+                            <form>
+                                <div class="form-group ">
+                                    <textarea class="form-control " id="exampleFormControlTextarea1 " rows="8 "></textarea>
+                                    <br><button class="btn btn-primary btn-circle text-uppercase " type="submit " id="submit ">Submit</button>
+
+                                </div>
+
+                            </form>
+                        </div>
+            </div>
+            <div class="col-sm-3 ">
+                <div class="input-group clockpicker ">
+                    <p>Date/Time: <span id="datetime "></span></p>
+                    <span class="input-group-addon ">
+                                <span class="glyphicon glyphicon-time "></span>
+                    </span>
+                </div>
+                <script>
+                    var dt = new Date();
+                    document.getElementById("datetime ").innerHTML = dt.toLocaleString();
+                </script>
+
+            </div>
+        </div>
+    </div>
+</body>
+<footer><br><br>
+    <span>
+        <h2><marquee class="editor2 "e> © 2019 By Julius Warih. </marquee>  </h2>
+        
+            <h4><marquee class="editor2 "e><a href="https://winpoin.com/cara-dual-boot-ubuntu-16-04-lts-dan-windows-10-full-tutorial/">Sumber : link artikel (KLIK AJA) </a> </marquee> </h4>
+      
+    </span>
+
+</footer>
+<br>
+<script src="bootstrap/jquery/jquery-3.4.1.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script src="bootstrap/jquery/script.js"></script>
+<script src="bootstrap/jquery/jquery.easing.1.3.js"></script>
+
+</html>
